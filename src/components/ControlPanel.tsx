@@ -3,7 +3,8 @@ import { Button } from '@/components/ui/button';
 import { Slider } from '@/components/ui/slider';
 import { Label } from '@/components/ui/label';
 import { Switch } from '@/components/ui/switch';
-import { Palette, Grid3X3, Minus, Plus } from 'lucide-react';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Palette, Grid3X3, Minus, Plus, RectangleHorizontal } from 'lucide-react';
 
 interface ControlPanelProps {
   isGrayscale: boolean;
@@ -14,6 +15,8 @@ interface ControlPanelProps {
   onGridColorChange: (color: string) => void;
   gridWidth: number;
   onGridWidthChange: (value: number) => void;
+  aspectRatio: string;
+  onAspectRatioChange: (ratio: string) => void;
 }
 
 const ControlPanel = ({
@@ -25,6 +28,8 @@ const ControlPanel = ({
   onGridColorChange,
   gridWidth,
   onGridWidthChange,
+  aspectRatio,
+  onAspectRatioChange,
 }: ControlPanelProps) => {
   const colorOptions = [
     { name: 'White', value: '#ffffff' },
@@ -37,6 +42,17 @@ const ControlPanel = ({
     { name: 'Pink', value: '#ec4899' },
   ];
 
+  const aspectRatioOptions = [
+    { name: 'Original', value: 'original' },
+    { name: 'Square (1:1)', value: '1:1' },
+    { name: 'Portrait (3:4)', value: '3:4' },
+    { name: 'Landscape (4:3)', value: '4:3' },
+    { name: 'Wide (5:4)', value: '5:4' },
+    { name: 'Photo (3:2)', value: '3:2' },
+    { name: 'Widescreen (16:9)', value: '16:9' },
+    { name: 'Ultra Wide (21:9)', value: '21:9' },
+  ];
+
   return (
     <Card className="p-6 bg-control-panel border-canvas-border space-y-6">
       <div className="flex items-center gap-3 pb-2 border-b border-border">
@@ -44,6 +60,31 @@ const ControlPanel = ({
           <Grid3X3 className="w-4 h-4 text-accent-foreground" />
         </div>
         <h2 className="text-lg font-semibold text-card-foreground">Grid Controls</h2>
+      </div>
+
+      {/* Aspect Ratio */}
+      <div className="space-y-3">
+        <div className="flex items-center gap-2">
+          <RectangleHorizontal className="w-4 h-4 text-muted-foreground" />
+          <Label className="text-sm font-medium text-card-foreground">
+            Aspect Ratio
+          </Label>
+        </div>
+        <Select value={aspectRatio} onValueChange={onAspectRatioChange}>
+          <SelectTrigger className="w-full">
+            <SelectValue placeholder="Select aspect ratio" />
+          </SelectTrigger>
+          <SelectContent>
+            {aspectRatioOptions.map((option) => (
+              <SelectItem key={option.value} value={option.value}>
+                {option.name}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
+        <p className="text-xs text-muted-foreground">
+          Crop image to specific proportions for better composition
+        </p>
       </div>
 
       {/* Grayscale Toggle */}

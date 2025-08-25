@@ -14,6 +14,7 @@ const Index = () => {
   const [gridSize, setGridSize] = useState(8);
   const [gridColor, setGridColor] = useState('#ffffff');
   const [gridWidth, setGridWidth] = useState(2);
+  const [aspectRatio, setAspectRatio] = useState<string>('original');
 
   const handleImageUpload = (file: File) => {
     const img = new Image();
@@ -69,6 +70,8 @@ const Index = () => {
               onGridColorChange={setGridColor}
               gridWidth={gridWidth}
               onGridWidthChange={setGridWidth}
+              aspectRatio={aspectRatio}
+              onAspectRatioChange={setAspectRatio}
             />
           </div>
 
@@ -80,6 +83,7 @@ const Index = () => {
               gridSize={gridSize}
               gridColor={gridColor}
               gridWidth={gridWidth}
+              aspectRatio={aspectRatio}
             />
           </div>
         </div>
@@ -94,7 +98,7 @@ const Index = () => {
       {/* Footer */}
       <footer className="py-6 px-4 text-center border-t border-border/50 mt-16">
         <p className="text-sm text-muted-foreground">
-          Created for artists, by artists. Master the grid method and improve your drawing accuracy.
+          Copyright owned by Xe54z 2025
         </p>
       </footer>
     </div>

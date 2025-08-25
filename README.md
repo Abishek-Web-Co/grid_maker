@@ -1,102 +1,73 @@
-# Grid Maker
+# Welcome to your Lovable project
 
-A grid-maker website designed especially for artists. Upload your image and overlay a customizable grid to aid in accurate drawing reproduction.
+## Project info
 
----
+**URL**: https://lovable.dev/projects/83a4c6d8-5556-4a41-ba80-880105084b7e
 
-## ✨ Features
+## How can I edit this code?
 
-- Upload any image and it will be displayed on a canvas with a proportional grid overlay.
-- Customize:
-  - Grid size (e.g., 5×5, 10×10),
-  - Color of grid lines,
-  - Grid line width,
-  - Toggle grayscale mode for enhanced visibility.
-- View real-world measurements (in centimeters) for each cell and the overall image dimensions—great for manual grid drawing.
-- Export the final image as a PNG for printing or reference.
+There are several ways of editing your application.
 
----
+**Use Lovable**
 
-## 🛠 Tech Stack
+Simply visit the [Lovable Project](https://lovable.dev/projects/83a4c6d8-5556-4a41-ba80-880105084b7e) and start prompting.
 
-- **Framework**: React + TypeScript (TSX)
-- **Build Tool**: Vite
-- **Design/UI**: Tailwind CSS, shadcn-ui components
-- **Hosting**: Firebase
+Changes made via Lovable will be committed automatically to this repo.
 
----
+**Use your preferred IDE**
 
-## 🚀 Getting Started
+If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
 
-### Prerequisites
+The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
-Ensure you have the following installed:
+Follow these steps:
 
-- [Node.js](https://nodejs.org/) (v14+)
-- npm (bundled with Node)
+```sh
+# Step 1: Clone the repository using the project's Git URL.
+git clone <YOUR_GIT_URL>
 
-### Setup & Run Locally
+# Step 2: Navigate to the project directory.
+cd <YOUR_PROJECT_NAME>
 
-```bash
-# Clone the repository
-git clone https://github.com/Abishek-Web-Co/grid_maker.git
-cd grid_maker
+# Step 3: Install the necessary dependencies.
+npm i
 
-# Install dependencies
-npm install
-
-# Start development server
+# Step 4: Start the development server with auto-reloading and an instant preview.
 npm run dev
 ```
 
-Now, visit `http://localhost:3000` (or the URL shown in your terminal) to view and test the app.
+**Edit a file directly in GitHub**
 
----
+- Navigate to the desired file(s).
+- Click the "Edit" button (pencil icon) at the top right of the file view.
+- Make your changes and commit the changes.
 
-## 📦 Build & Deploy
+**Use GitHub Codespaces**
 
-### Build for Production
+- Navigate to the main page of your repository.
+- Click on the "Code" button (green button) near the top right.
+- Select the "Codespaces" tab.
+- Click on "New codespace" to launch a new Codespace environment.
+- Edit files directly within the Codespace and commit and push your changes once you're done.
 
-```bash
-npm run build
-```
+## What technologies are used for this project?
 
-This will generate a production-ready output (usually in `dist/`).
+This project is built with:
 
-### Firebase Hosting (if configured)
+- Vite
+- TypeScript
+- React
+- shadcn-ui
+- Tailwind CSS
 
-```bash
-# Initialize Firebase (if not already done)
-firebase init hosting
+## How can I deploy this project?
 
-# Deploy
-firebase deploy
-```
+Simply open [Lovable](https://lovable.dev/projects/83a4c6d8-5556-4a41-ba80-880105084b7e) and click on Share -> Publish.
 
-Your site should now be live via Firebase Hosting—consult `firebase.json` for config details.
+## Can I connect a custom domain to my Lovable project?
 
----
+Yes, you can!
 
-## 📂 Repository Structure
+To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
-```
-firebase.json, .firebaserc       → Firebase Hosting configuration
-src/                             → Main React & TSX application
-public/                          → Static assets like index.html
-README.md                        → Project documentation (you’re here)
-package.json, tsconfig.json, etc. → Project metadata & config
-```
-
----
-
-## 🤝 Contributing
-
-Contributions are always welcome! Whether it’s improving accuracy, adding features like PDF export, or enhancing UX—feel free to open an issue or submit a pull request.
-
----
-
-## 📜 License
-
-Include your preferred license here, such as MIT.
-
----
+Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
